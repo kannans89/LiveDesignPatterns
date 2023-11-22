@@ -15,6 +15,14 @@ namespace FacotryClientApp
             auto.Stop();
 
 
+            AutomobileFactory factory2 = AutomobileFactory.GetInstance();
+            IAutoMobile auto2 = factory.Make(AutoType.TESLA);
+            Console.WriteLine(auto2.GetType());
+            auto2.Start();
+            auto2.Stop();
+
+            Console.WriteLine(factory==factory2);
+
         }
     }
 }
