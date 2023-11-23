@@ -1,0 +1,5 @@
+{
+  "FactoryName": "FactoryMethodCoreLib.Factory.TeslaFactory"
+ // "FactoryName": "FactoryMethodCoreLib.Factory.BmwFactory"
+  //"FactoryName": "FactoryMethodCoreLib.Factory.AudiFactory"
+}
