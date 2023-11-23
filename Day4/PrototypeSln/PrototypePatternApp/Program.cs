@@ -15,7 +15,12 @@ namespace PrototypePatternApp
 
             //  CaseStudy3();
 
-            CaseStudy4();
+          //  CaseStudy4();
+
+            //var emp1 = new Employee();
+            // emp1.AddAddress(new Address { Location="Madhurai" });
+
+            //emp1.Addresses.Add((new Address { Location = "Madhurai" }));
         }
 
         private static void CaseStudy4()
