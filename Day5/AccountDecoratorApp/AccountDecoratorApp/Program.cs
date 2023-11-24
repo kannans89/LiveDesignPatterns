@@ -1,5 +1,6 @@
 ﻿using AccountDecoratorApp.Decorator;
 using AccountDecoratorApp.Model;
+using System.Security.Cryptography;
 
 namespace AccountDecoratorApp
 {
@@ -52,6 +53,36 @@ namespace AccountDecoratorApp
 
             // CaseStudy2();
 
+            //CaseStudy3();
+
+            CaseStudy4();
+        }
+
+        private static void CaseStudy4()
+        {
+
+            FileStream fileStream = new FileStream("C:\\temp\\data.txt", FileMode.Open);
+
+            // Wrap the FileStream with a BufferedStream for added functionality (decorator pattern)
+            BufferedStream bufferedStream = new BufferedStream(fileStream);
+
+            // Now, you can read from the buffered stream
+            using (StreamReader reader = new StreamReader(bufferedStream))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+
+            // Close the streams when done
+            bufferedStream.Close();
+            fileStream.Close();
+        }
+
+        private static void CaseStudy3()
+        {
             var account = new Account(101, "abc", 1000);
             var validator = new AccountValidationDecorator(account);
             IAccount account1 = new AccountLoggingDecarator(validator);
