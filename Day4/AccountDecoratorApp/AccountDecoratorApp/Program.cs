@@ -24,7 +24,7 @@ namespace AccountDecoratorApp
             //Man x = new Boy();
             //x.Play();
 
-            var account1 = new Account(101, "abc", 1000);
+            //var account1 = new( new Account(101, "abc", 1000));
             account1.Depsoit(200);
 
             Console.WriteLine(account1.Balance);
