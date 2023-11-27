@@ -13,10 +13,11 @@ namespace EncoderBridgeApp
             MovieData movie2 = new MovieData("2", "Generic romantic comedy", 72);
 
             var encoder = new  JsonEncoder();
-            var serialzer = new FileMovieSerialzer(encoder,"c:\\temp");
+            // var serialzer = new FileMovieSerialzer(encoder,"c:\\temp");
 
-            serialzer.WriteMovieDetails(movie1);
-            serialzer.WriteMovieDetails(movie2);
+            var serialzer = new ConsoleMovieSerializer(encoder);
+            serialzer.WriteEncodedMovieDetails(movie1);
+            serialzer.WriteEncodedMovieDetails(movie2);
 
 
         }

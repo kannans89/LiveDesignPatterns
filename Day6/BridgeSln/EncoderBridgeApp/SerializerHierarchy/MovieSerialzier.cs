@@ -10,19 +10,15 @@ namespace EncoderBridgeApp.SerializerHierarchy
 {
     public abstract class MovieSerializer
     {
-        private readonly IEncoder encoder;//bridge
+        protected readonly IEncoder encoder;//bridge
 
         protected MovieSerializer(IEncoder encoder)
         {
             this.encoder = encoder ?? throw new ArgumentNullException(nameof(encoder));
         }
 
-        protected abstract void WriteEncodedMovieDetails(MovieData movieData, string data);
+        public abstract void WriteEncodedMovieDetails(MovieData movieData);
 
-        public void WriteMovieDetails(MovieData movieData)//template method
-        {
-            var encodedString = encoder.Encode(movieData);
-            WriteEncodedMovieDetails(movieData, encodedString);
-        }
+       
     }
 }

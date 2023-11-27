@@ -15,8 +15,9 @@ namespace EncoderBridgeApp.SerializerHierarchy
         {
         }
 
-        protected override void WriteEncodedMovieDetails(MovieData movieData, string data)
+        public override void WriteEncodedMovieDetails(MovieData movieData)
         {
+            string data = encoder.Encode(movieData);
             Console.WriteLine("displaying details of:".ToUpper() + movieData.GetImdbId());
             Console.WriteLine(data);
         }

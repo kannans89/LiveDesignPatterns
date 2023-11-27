@@ -18,8 +18,9 @@ namespace EncoderBridgeApp.SerializerHierarchy
             this.rootDir = rootDir ?? throw new ArgumentNullException(nameof(rootDir));
         }
 
-        protected override void WriteEncodedMovieDetails(MovieData movieData, string data)
+        public override void WriteEncodedMovieDetails(MovieData movieData)
         {
+            string data= encoder.Encode(movieData);
             using (var output = new StreamWriter(Path.Combine(rootDir, $"movie_{movieData.GetImdbId()}.txt")))
             {
                 output.Write(data);
