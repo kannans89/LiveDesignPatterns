@@ -1,4 +1,6 @@
-﻿namespace IteratorPatternApp
+﻿using System.Collections;
+using System.Linq;
+namespace IteratorPatternApp
 {
     internal class Program
     {
@@ -6,17 +8,37 @@
         {
             //CaseStudy1();
 
-           // CaseSTudy2();
+            // CaseSTudy2();
 
+            // CaseStudy3();
+
+            IEnumerable repo2 = new NamesRepository("Kannan,Satheesh,Derek,Gordan");
+            var query =repo2.Cast<object>().ToList()
+                .OrderByDescending(x => x);
+
+            foreach (var item in query)
+            {
+
+                Console.WriteLine(item);
+            }
+                
+
+
+        }
+
+        private static void CaseStudy3()
+        {
             var repo = new NamesRepository("Kannan,Satheesh,Derek,Gordan");
             repo.AddName("Pradhibha");
+
+
+
 
             foreach (var item in repo)
             {
 
                 Console.WriteLine(item);
             }
-
         }
 
         private static void CaseSTudy2()
