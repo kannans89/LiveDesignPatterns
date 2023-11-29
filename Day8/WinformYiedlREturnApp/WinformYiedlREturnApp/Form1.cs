@@ -15,13 +15,15 @@ namespace WinformYiedlREturnApp
 
         private async void PoplulateListBoxWithOrganizationNames()
         {
-          await  foreach (var name in GetOrganizationNames()) { 
-               listBox1.Items.Add(name);
+            await foreach (var name in GetOrganizationNames())
+            {
+                listBox1.Items.Add(name);
             }
         }
 
 
-        private async IAsyncEnumerable<string> GetOrganizationNames() {
+        private async IAsyncEnumerable<string> GetOrganizationNames()
+        {
 
             using (SqlConnection connection = new SqlConnection("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=MyOrgnization;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=true"))
             {
@@ -55,7 +57,7 @@ namespace WinformYiedlREturnApp
 
             if (Directory.Exists(directoryPath))
             {
-                foreach (string filePath in 
+                foreach (string filePath in
                     Directory.EnumerateFiles(directoryPath))
                 {
                     yield return Path.GetFileName(filePath);
